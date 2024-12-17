@@ -1,0 +1,169 @@
+التخطّي إلى المحتوى الرئيسي
+Google Classroom
+Classroom
+‪CS112 - Structured Programming‬‏
+‪2023 - 2024 - 2nd‬‏
+الصفحة الرئيسية
+التقويم
+تم التسجيل
+المهام المطلوبة
+C
+CS112 - Structured Programming
+2023 - 2024 - 2nd
+O
+OOP WS
+الصفوف المؤرشفة
+الإعدادات
+تفاصيل المهمة
+Assignment 1 - Task 2 - Python Game‏
+Mohamed Elramly
+•
+18 فبراير (وقت آخر تعديل: 22 فبراير)
+100 نقطة
+موعد التسليم 22 فبراير، 9:19 م
+Work must be ORIGINAL and written by HUMAN.
+Everyone delivers his own game. 
+What to deliver?
+
+1.     
+File containing your code and enough comments. Code should be working. 
+
+2.     
+File name should be CS112_A1_T2_GameNumber_YourID.py. Files
+with wrong names are not marked. If you did C++ name it .cpp
+
+3.     
+Each file should have the following header:
+          # File: File Name
+          # Purpose: Description of your game
+          # Author: Your Name
+          # ID: Your ID
+
+All solutions are evaluated for originality. Copied or generated
+solutions are punished.
+6 تعليقات من الصف
+
+Abd Elrahman Mohamed‏18 فبراير
+يا دكتور احنا كده كل واحد هيسلم الgame بتاعته لوحده ولا التيم كله يسلم في نفس الملف؟
+
+Mohamed Elramly‏18 فبراير
+every one delivers his own game
+
+Mohamed Adel‏19 فبراير
+بنسبة لتاسك 4 ,هل نحط مع كل تسليمة لينك الفيديو البنشرح فيه الكود ولا لا ؟
+
+Ahmed Shaaban‏19 فبراير
+Should I record a video for the game ?
+
+Ubdelrhman Ismal‏19 فبراير
+شباب محتاج تيم انا وصلت متأخر
+
+Youssef Hassan‏20 فبراير
+دكتور أضغط الفايلين (python & ++c) ولا أبعتهم منفصلين؟
+
+إضافة تعليق على مستوى الصف...
+
+واجبك
+تم التسليم
+
+#assignment sp.py‏
+نص
+لا يمكن تسليم العمل بعد تاريخ التسليم.
+التعليقات الخاصة
+# File: CS112_A1_T2_3_20231221
+#-----------------------------------------------------------------------------
+# Purpose: A subtract a squrae game in python. we will start with random number or number chosen by the user and the both players
+#          will take a square number from random number or number chosen by the user  
+#          the first one who reaches to 0 wins.  
+# Author: Shawky Reda Shawkey sayed 
+# ID: 20231221
+#------------------------------------------------------------------------------
+#"Importing the random library."
+import random
+#"Definition of the main function."
+def main():
+    print( "welcome to subtract a square  game\n  ")
+#"User choice between random number or entered number"
+    chioce=input("would you like to use random number? yes or no?\n")
+
+    while chioce.lower ()!= 'yes' and  chioce.lower()!='no': #  "Verification of the validity of the user's choice"
+        chioce=input("would you like to use random number? yes or no?\n")
+    if chioce.lower ()== 'yes': 
+        coins = random.randint(1,250)
+        #Prevent the use of a square number.
+        root=coins**.5
+        while root %1==0:
+            coins=random.randint(1,250)
+            root=coins**.5
+        print(f"your coins ={coins}")
+    elif chioce.lower()== 'no':
+        coins=input("enter your coins:\n")
+        #verifying the vaildity of number of coins
+        while True :
+            if coins.isdigit():
+                coins=int(coins)
+                break
+            else:
+                 print("please enter vailed number")
+                 coins=input("enter your coins:\n")
+       #Prevent the use of a square number.  
+        root=coins**.5
+        while root %1==0 :
+            coins=int(input("enter your coins in a non-square number:\n"))
+            root=coins**.5
+    squares=[]                    #Creating a list to display possible square numbers."
+    i=1
+    while  i<=(coins**.5)  :    
+        squares.append(i**2)
+        i=i+1
+    
+    while coins>0 : 
+        move1=input("player1:please take square number:\n")
+        #  Verifying the validity of the first player's move." 
+        while True:
+            if move1.isdigit():
+                move1=int(move1)
+                break
+            else: 
+                 print("please take a vailed number ") 
+                 move1=input("player1:please take square number:\n")
+        while move1 not in squares or move1 > coins :                
+        
+            move1=input("player1:please take square number:\n")
+                    
+        coins-=move1
+        if coins==0 :
+            print("player1 is winner")
+            break
+        else:
+            print(f"Now,we have{coins}")
+
+        move2=input("player2:please take square number:\n")
+         #  Verifying the validity of the second player's move."
+        while True:
+             if move2.isdigit():
+                  move2=int(move2)  
+                  break
+             else:
+                  print("please take a vailed number") 
+                  move2=input("player2:please take square number:\n")
+
+        while move2 not in squares or move2 > coins:    
+            move2=int(input("player2:please take square number:\n"))
+        coins-=move2
+        if coins==0:
+                 print("player2 is winner")
+                 break
+        else:
+                 print(f"Now,we have{coins}")    
+main()
+
+
+
+
+
+    
+
+
+#assignment sp.py
+جارٍ عرض #assignment sp.py.
